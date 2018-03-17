@@ -2,7 +2,7 @@
     /* background-color: rgb(194, 211, 229); */
 }
 
-.cal-day {
+.cal-dayOfweek {
     border: 1px solid rgb(90, 159, 223);
     /* width: 162.8px; this is without padding'n'stuff*/
     width: 150px;
@@ -11,10 +11,18 @@
     text-align: center;
 }
 
-.cal-day:first-child {
+.cal-dayOfweek:first-child {
     border-top-left-radius: 4px;
 }
 
-.cal-day:last-child {
+.cal-dayOfweek:last-child {
     border-top-right-radius: 4px;
 }
+
+.day {
+    height: 100px;
+    width: 150px;
+    border: 1px solid rgb(90, 159, 223);
+    margin: 1px;
+}
+
