@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import React from "react";
-import {Header} from "./Components/Header";
+import {Header} from "./Components/Header.jsx";
 import {Calendar} from "./Components/Calendar";
 
 class App extends React.Component {
