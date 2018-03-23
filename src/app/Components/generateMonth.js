@@ -1,4 +1,4 @@
-
+import moment from "moment";
 
 export function generateMonth(month) {
     var fullMonth = [];
@@ -27,7 +27,8 @@ export function generateMonth(month) {
     };
 
     return {
-        fullMonth: fullMonth
+        fullMonth: fullMonth,
+        dateToRender: moment(dateToRender).format("Do MMMM YYYY")
     }
 };
 
