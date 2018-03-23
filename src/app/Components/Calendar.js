@@ -2,7 +2,7 @@ import React from "react";
 import moment from "moment";
 import shortid from "shortid";
 
-import {generateMonth} from "./generateMonth"
+import {generateMonth} from "./generateMonth";
 import {Day} from "./Day";
 
 export class Calendar extends React.Component {
@@ -28,12 +28,3 @@ export class Calendar extends React.Component {
         )
     }
 }
-
-//See what is happening in generateMonth function
-// console.log('sected month: '+ m + '\n' +
-// 'days in last month: ' + daysInLastMonth + '\n' +
-// 'days in this month: ' + daysInCurMonth + '\n' +
-// 'first day of month: ' + fDayOfMonth + '\n' +
-// 'last day of the month: ' + "lDayOfMonth" + '\n' +
-// 'date from which array starts: ' + (dateFromWhichToStartCurMonth) + '\n' + 
-// 'How many dates to add in the end of array: ' + "lastDatesOfTheMonth");

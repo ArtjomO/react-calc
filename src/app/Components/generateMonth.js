@@ -1,4 +1,6 @@
-function generateMonth (month){
+
+
+export function generateMonth(month) {
     var fullMonth = [];
     
     var today = new Date();
@@ -29,4 +31,11 @@ function generateMonth (month){
     }
 };
 
-export default generateMonth();
+//See what is happening in generateMonth function
+// console.log('sected month: '+ m + '\n' +
+// 'days in last month: ' + daysInLastMonth + '\n' +
+// 'days in this month: ' + daysInCurMonth + '\n' +
+// 'first day of month: ' + fDayOfMonth + '\n' +
+// 'last day of the month: ' + "lDayOfMonth" + '\n' +
+// 'date from which array starts: ' + (dateFromWhichToStartCurMonth) + '\n' + 
+// 'How many dates to add in the end of array: ' + "lastDatesOfTheMonth");
