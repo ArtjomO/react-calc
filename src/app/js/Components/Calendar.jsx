@@ -3,7 +3,7 @@ import moment from "moment";
 import shortid from "shortid";
 
 import {generateMonth} from "./generateMonth";
-import {Day} from "./Day";
+import {Day} from "./Day.jsx";
 
 export class Calendar extends React.Component {
     constructor() {

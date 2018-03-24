@@ -2,13 +2,6 @@
     padding-bottom: 3px;
 }
 
-.date {
-    /* margin-bottom: 10px; */
-}
-
-/* .cal-head {
-    background-color: rgb(194, 211, 229);
-} */
 .arrow:hover {
     cursor: pointer;
 }
@@ -50,10 +43,5 @@
     border-top-right-radius: 4px;
 }
 
-.day {
-    height: 100px;
-    width: 150px;
-    border: 1px solid rgb(90, 159, 223);
-    margin: 1px;
-}
+
 
