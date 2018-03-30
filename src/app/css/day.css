@@ -3,8 +3,14 @@
     width: 150px;
     border: 1px solid rgb(90, 159, 223);
     margin: 1px;
-    position: relative;
+    transition: width 0.3s, height 0.3s;
 }
+
+.day:hover {
+    height: 140px;
+    width: 190px;
+}
+
 
 .day .date {
     border-bottom: 1px solid rgb(90, 159, 223);
@@ -12,7 +18,7 @@
     background-color: rgba(90, 159, 223, 0.166);
 }
 
-.shiftType {
+/* .shiftType {
     height: 24px;
     outline: 1px solid black;
-}
+} */
