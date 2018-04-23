@@ -1,3 +1,9 @@
+.cal {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .cal-date {
     padding-bottom: 3px;
 }
@@ -9,6 +15,7 @@
 .arrow-left {
     width: 0; 
     height: 0; 
+    display: inline-block;
     border-top: 10px solid transparent;
     border-bottom:10px solid transparent; 
     margin-right: 15px;
@@ -16,9 +23,14 @@
     border-right:16px solid rgb(90, 159, 223); 
 }
 
+.date {
+    display: inline-block;
+}
+
 .arrow-right {
     width: 0; 
     height: 0; 
+    display: inline-block;
     border-top: 10px solid transparent;
     border-bottom:10px solid transparent; 
     margin-left: 15px;
@@ -30,6 +42,7 @@
     border: 1px solid rgb(90, 159, 223);
     /* width: 162.8px; this is without padding'n'stuff*/
     width: 150px;
+    display: inline-block;
     margin-left: 1px;
     margin-right: 1px;
     text-align: center;

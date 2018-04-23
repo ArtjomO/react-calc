@@ -1,6 +1,7 @@
 .day {
     height: 100px;
     width: 150px;
+    display: inline-block;
     border: 1px solid rgb(90, 159, 223);
     margin: 1px;
     transition: width 0.3s, height 0.3s;
@@ -13,9 +14,11 @@
 
 
 .day .date {
+    text-align: end;
     border-bottom: 1px solid rgb(90, 159, 223);
     padding-right: 8px;
     background-color: rgba(90, 159, 223, 0.166);
+    display: block;
 }
 
 /* .shiftType {
