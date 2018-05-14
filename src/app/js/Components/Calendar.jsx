@@ -20,8 +20,8 @@ export class Calendar extends React.Component {
         this.setState({
             monthCount: this.state.monthCount + plusMinus
         })
-    }
-    
+    };
+
     render() {
         return (
             <div className="cal">
@@ -36,7 +36,7 @@ export class Calendar extends React.Component {
                 </div>
 
                 <div className="cal-body">
-                    { generateMonth(this.state.monthCount).fullMonth.map(date =>  <Day key={shortid.generate()} date={date}/>) }
+                    { generateMonth(this.state.monthCount).fullMonth.map(date => <Day key={shortid.generate()} date={date}/>) }
                 </div>
             </div>
         )
