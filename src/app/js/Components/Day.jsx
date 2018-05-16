@@ -13,27 +13,32 @@ export class Day extends React.Component {
         this.setState({
             clicked: !this.state.clicked
         });
-        this.state.clicked ? target.style.visibility = 'hidden' : target.style.visibility = 'visible'
     }    
 
     render(){
         return (
-            <div className="day" onClick={e => this.displayCard(e.target)}>
-                <div className="date">
-                    <span> {this.props.date} </span>
+            <div className="day">
+                <div key="some" className="popup-card" style={this.state.clicked ? cardStyle : null} onClick={e => this.displayCard(e.target)}>
+                    <div className="date">
+                        <span> {this.props.date} </span>
+                        <div className="shiftType"></div>
+                        <div className="shiftType"></div>
+                        <div className="shiftType"></div>
+                    </div>
                 </div>
-                { this.state.clicked ? 
-                    <div key="some" className="popup-card">
-                        <div className="date">
-                            <span> {this.props.date} </span>
-                        </div>
-                    </div> : null }
-                <div className="shiftType"></div>
-                <div className="shiftType"></div>
-                <div className="shiftType"></div>
             </div>
         )
     }
+}
+
+const cardStyle = {
+    width: 150,
+    height: 170,
+    borderRadius: 5,
+    margin: 1,
+    visibility: 'visible',
+    position: 'relative',
+    zIndex: 5
 }
 
 // toggleState(){
