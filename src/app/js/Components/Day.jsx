@@ -10,9 +10,13 @@ export class Day extends React.Component {
     }
     
     displayCard(target){
+
+        
         this.setState({
             clicked: !this.state.clicked
         });
+
+        
     }    
 
     render(){
@@ -31,14 +35,15 @@ export class Day extends React.Component {
     }
 }
 
-const cardStyle = {
-    width: 150,
-    height: 170,
+let cardStyle = {
+    height: 150,
+    width: 170,
     borderRadius: 5,
     margin: 1,
+    marginLeft: -10,
     visibility: 'visible',
     position: 'relative',
-    zIndex: 5
+    // zIndex: 1
 }
 
 // toggleState(){

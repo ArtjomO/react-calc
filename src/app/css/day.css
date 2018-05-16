@@ -24,9 +24,9 @@
 
 .popup-card {
    
-    /* transition: width 0.3s, height 0.3s; */
-    height: inherit;
-    width: inherit;
+    transition: margin 0.3s, width 0.3s, height 0.3s, border-radius, 0.3s;
+    height: 100px;
+    width: 150px;
     border: 1px solid rgb(90, 159, 223);
     border: 1px solid rgb(90, 159, 223);
     margin: 1px;
