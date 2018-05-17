@@ -23,11 +23,15 @@ export class Calendar extends React.Component {
     };
 
     render() {
+
+        const generatedMonth = generateMonth(this.state.monthCount);
+        console.log(generatedMonth.dateToRender, generatedMonth.todayDate(17))
+
         return (
             <div className="cal">
                 <div className="cal-date">
                     <div className="arrow arrow-left" onClick={() => this.switchMonth(-1)}></div>
-                    <div className="date">{generateMonth(this.state.monthCount).dateToRender} </div>
+                    <div className="date">{generatedMonth.dateToRenderFormated} </div>
                     <div className="arrow arrow-right" onClick={() => this.switchMonth(1)}></div>
                 </div>
 
@@ -36,7 +40,10 @@ export class Calendar extends React.Component {
                 </div>
 
                 <div className="cal-body">
-                    { generateMonth(this.state.monthCount).fullMonth.map(date => <Day key={shortid.generate()} date={date}/>) }
+                    { generatedMonth.fullMonth.map(date => <Day key={shortid.generate()} 
+                                                                date={date} 
+                                                                dateToRender={generatedMonth.dateToRender} 
+                                                                today={generatedMonth.todayDate}/>) }
                 </div>
             </div>
         )
