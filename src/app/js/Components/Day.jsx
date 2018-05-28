@@ -9,20 +9,18 @@ export class Day extends React.Component {
             clicked: false
         }
     }
-    
-    displayCard(target){                
+
+    displayCard(target){             
         this.setState({
             clicked: !this.state.clicked
         });
-
-        
     }    
 
     render(){
         return (
             <div className="day">
                 <div key="some" className="popup-card" style={this.state.clicked ? cardStyle : null} onClick={e => this.displayCard(e.target)}>
-                    <div className="date" style={this.props.dateToRender === this.props.today(this.props.date) ? {backgroundColor: 'green'} : null}>
+                    <div className="date" style={this.props.chosenMonthDateToRender === this.props.today(this.props.date) ? {backgroundColor: 'rgb(15,230,20,0.4)'} : null}>
                         <span> {this.props.date} </span>
                         <div className="shiftType"></div>
                         <div className="shiftType"></div>
@@ -34,7 +32,7 @@ export class Day extends React.Component {
     }
 }
 
-let cardStyle = {
+const cardStyle = {
     height: 150,
     width: 170,
     borderRadius: 5,

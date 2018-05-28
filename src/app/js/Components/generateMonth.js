@@ -29,7 +29,7 @@ export function generateMonth(month) {
     return {
         fullMonth: fullMonth,
         todayDate: date => new Date(y, today.getMonth(), date).toDateString(),
-        dateToRender: dateToRender.toDateString(),
+        chosenMonthDateToRender: dateToRender.toDateString(),
         dateToRenderFormated: moment(dateToRender).format("Do MMMM YYYY")
     }
 };

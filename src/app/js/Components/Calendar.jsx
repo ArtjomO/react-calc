@@ -10,7 +10,8 @@ export class Calendar extends React.Component {
         super();
 
         this.state = {
-            monthCount: 0
+            monthCount: 0,
+            clicked: false
         }
     };
 
@@ -21,6 +22,12 @@ export class Calendar extends React.Component {
             monthCount: this.state.monthCount + plusMinus
         })
     };
+
+    displayCard(target){                
+        this.setState({
+            clicked: !this.state.clicked
+        });
+    }
 
     render() {
 
@@ -42,7 +49,7 @@ export class Calendar extends React.Component {
                 <div className="cal-body">
                     { generatedMonth.fullMonth.map(date => <Day key={shortid.generate()} 
                                                                 date={date} 
-                                                                dateToRender={generatedMonth.dateToRender} 
+                                                                chosenMonthDateToRender={generatedMonth.chosenMonthDateToRender} 
                                                                 today={generatedMonth.todayDate}/>) }
                 </div>
             </div>
