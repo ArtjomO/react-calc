@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import shortid from "shortid";
-
+import fire from '../firebase/firebaseConfig.js';
 import {generateMonth} from "./generateMonth";
 import {Day} from "./Day.jsx";
 
@@ -29,6 +29,10 @@ export class Calendar extends React.Component {
         });
     }
 
+    logout(){
+        fire.auth().signOut()
+    }
+
     render() {
 
         const generatedMonth = generateMonth(this.state.monthCount);
@@ -52,6 +56,7 @@ export class Calendar extends React.Component {
                                                                 chosenMonthDateToRender={generatedMonth.chosenMonthDateToRender} 
                                                                 today={generatedMonth.todayDate}/>) }
                 </div>
+                <button onClick={ this.logout }>Logout</button>
             </div>
         )
     }

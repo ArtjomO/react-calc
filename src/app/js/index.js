@@ -10,13 +10,33 @@ class Login extends React.Component {
         super();
         this.signIn = this.signIn.bind(this);
         this.state = {
-            email: '',//test@kek.com
-            password: ''//testkek
+            signUpPage: false,
+            email: 'test@kek.com',//test@kek.com
+            password: 'testkek',//testkek
+            passRepeat: ''
         }
     }
 
+    showSignUpPage(){
+        console.log(this.state.signUpPage)
+        this.setState({
+            signUpPage: true
+        })
+    }
+
     signIn(){
-        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(user => console.log(user)).catch(function(error) {
+        console.log('button pressed')
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(user => console.log(user + 'request sent')).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode + errorMessage)
+            // ...
+          });
+    }
+
+    signUp(){
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -27,14 +47,39 @@ class Login extends React.Component {
     render(){
         return (
             <div>
-                <h3>Pls login..</h3>
-                <p>
-                    <input type="email" onChange={ e => this.setState({email: e.target.value})}/>
-                </p>
-                <p>
-                    <input type="password" onChange={ e => this.setState({password: e.target.value})}/>
-                </p>
-                <button onClick={this.signIn}>Go!</button>
+                {!this.state.signUpPage ?
+                        
+                    <div>    
+                        <h3>Pls login..</h3>
+                        <p>
+                            <input type="email" value="test@kek.com" onChange={ e => this.setState({email: e.target.value})}/>
+                        </p>
+                        <p>
+                            <input type="password" value="testkek" onChange={ e => this.setState({password: e.target.value})}/>
+                        </p>
+                        <button onClick={this.signIn}>Go!</button>
+                        <p>
+                            <a href="#" onClick={this.showSignUpPage.bind(this)}>don't have an account?</a>
+                        </p>
+                    </div>
+                :
+                    <div>
+                        
+                        <p>
+                            <input type="email" value="test@kek.com" onChange={ e => this.setState({email: e.target.value})}/>
+                        </p>
+                        <p>
+                            <input type="password" value="testkek" onChange={ e => this.setState({password: e.target.value})}/>
+                        </p>
+                        <p>
+                            <input type="password" value="testkek" onChange={ e => this.setState({passRepeat: e.target.value})}/>
+                        </p>
+                        <button onClick={this.signUp}>Sign up!</button>
+                        <p>
+                            <a href="#" onClick={this.setState({signUp: false})}>login page</a> 
+                        </p>
+                    </div>
+                }
             </div>
         )
     }
@@ -55,18 +100,18 @@ class App extends React.Component {
             console.log(user);
             if (user) {
                 this.setState({ user: user });
-                // localStorage.setItem('user', user.uid)
+                console.log("User is set")
             } else {
                 this.setState({ user: null });
-                // localStorage.removeItem('user');
+                console.log("No user")          
             }
-        })
+        })   
     }
     
     render() {
-        return (
+        return (      
             <div>
-                { !this.state.user ? <Login/> : <Calendar/> }
+                { !this.state.user ? <Login /> : <Calendar/> }
             </div>
         )
     }
