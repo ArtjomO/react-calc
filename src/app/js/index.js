@@ -20,7 +20,7 @@ class Login extends React.Component {
     showSignUpPage(){
         console.log(this.state.signUpPage)
         this.setState({
-            signUpPage: true
+            signUpPage: !this.state.signUpPage
         })
     }
 
@@ -50,7 +50,6 @@ class Login extends React.Component {
                 {!this.state.signUpPage ?
                         
                     <div>    
-                        <h3>Pls login..</h3>
                         <p>
                             <input type="email" value="test@kek.com" onChange={ e => this.setState({email: e.target.value})}/>
                         </p>
@@ -64,7 +63,7 @@ class Login extends React.Component {
                     </div>
                 :
                     <div>
-                        
+                        <h3>Sign Up..</h3>
                         <p>
                             <input type="email" value="test@kek.com" onChange={ e => this.setState({email: e.target.value})}/>
                         </p>
@@ -76,7 +75,7 @@ class Login extends React.Component {
                         </p>
                         <button onClick={this.signUp}>Sign up!</button>
                         <p>
-                            <a href="#" onClick={this.setState({signUp: false})}>login page</a> 
+                            <a href="#" onClick={this.showSignUpPage.bind(this)}>login page</a> 
                         </p>
                     </div>
                 }
