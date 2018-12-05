@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import shortid from "shortid";
-import fire from '../firebase/firebaseConfig.js';
+import {fire} from '../firebase/firebaseConfig.js';
 import {generateMonth} from "./generateMonth";
 import {Day} from "./Day.jsx";
 
@@ -15,7 +15,7 @@ export class Calendar extends React.Component {
         }
     };
 
-    days = ['Sunday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Monday']
+    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
     switchMonth(plusMinus){
         this.setState({
@@ -36,7 +36,7 @@ export class Calendar extends React.Component {
     render() {
 
         const generatedMonth = generateMonth(this.state.monthCount);
-        console.log(generatedMonth.dateToRender, generatedMonth.todayDate(17))
+        console.log(generatedMonth.chosenMonthDateToRender, generatedMonth.todayDate(17))
 
         return (
             <div className="cal">

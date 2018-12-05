@@ -13,7 +13,7 @@ var config = {
     },
     
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js?/,
                 include: SRC_DIR,
